@@ -1,0 +1,4 @@
+FROM openjdk:25
+ADD spring-petclinic-4.0.0-SNAPSHOT.jar
+EXPOSE 8080
+CMD ["java","-jar",]
