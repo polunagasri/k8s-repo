@@ -2,10 +2,10 @@ apiVersion:
 kind: Pod
 metadata:
   name: pod-probe
-  labels: 
+  labels:
     app: probes
 spec:
-  containers: 
+  containers:
     - name: myprobe-containers
       image: nginx:1.29
       ports:
@@ -13,7 +13,7 @@ spec:
       livenessProbe:
         exec:
           command:
-            - cat 
+            - cat
             - /usr/share/nginx/html/index.html
           initialDelaySeconds: 5
           periodSeconds: 5
@@ -27,4 +27,4 @@ spec:
           port: 80
         initialDelaySeconds: 5
         periodSeconds: 5
-        failureThreshold: 3                
+        failureThreshold: 3
