@@ -14,11 +14,11 @@ spec:
         - containerPort: 8080
       resources:
         requests:
-          memory: "500Mi"
-          cpu: "450m"
+          memory: "300Mi"
+          cpu: "2000m"
         limits:
-          memory: "450Mi"
-          cpu: "350m"
+          memory: "600Mi"
+          cpu: "500m"
   restartPolicy: Always
 
 
