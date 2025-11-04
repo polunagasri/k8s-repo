@@ -1,23 +1,21 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-utilization
+  name: mypod
   labels:
-    app: mytest-pod
+    app: mytest
 spec:
   containers:
-    - name: mytest-container
-      image: jenkins/jenkins:lts
-      securityContext:
-        runAsUser: 0  
+    - name: mypod
+      image: jenkins/jenkins:lts-alpine
       ports:
         - containerPort: 8080
       resources:
         requests:
-          memory: "512Mi"
-          cpu: "450m"
+          memory: "128Mi"
+          cpu: "250m"
         limits:
-          memory: "2Gi"
-          cpu: "2"
+          memory: "128Mi"
+          cpu: "300m"
   restartPolicy: Always
 
