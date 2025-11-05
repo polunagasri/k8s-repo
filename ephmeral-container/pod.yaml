@@ -1,18 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: init-pod
+  name: debug-pod
 spec:
   containers:
-    - name: my-main-container
+    - name: my-main-con
       image: nginx:1.29
       ports:
         - containerPort: 80
 
-  ephemeralContainers:
-    - name: mydebug-container
-      image: busybox
-      tty: true
-      stdin: true
-      targetContainerName: my-main-container
   
