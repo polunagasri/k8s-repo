@@ -1,0 +1,9 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: myexternalservice
+spec:
+  type: ExternalName
+  externalName: google.com
+      

@@ -1,0 +1,13 @@
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myexternalpod
+  labels:
+    app: test-3
+spec:
+  containers:
+    - name: test-co-3
+      image: nginx:1.29
+      ports:
+
