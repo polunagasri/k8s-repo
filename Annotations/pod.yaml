@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mydemo-pod
+  labels:
+    app: demo-app
+  annotations:
+    myecr: "136003615259.dkr.ecr.ap-south-1.amazonaws.com/annotation-repo"
+spec:
+  containers:
+    - name: my-com
+      image: nginx:latest
+      ports:
+        - containerPort: 80
