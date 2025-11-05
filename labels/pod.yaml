@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: testing-pod-1
+  labels:
+    env: dev
+    ver: "1.32"
+spec:
+  containers:
+    - name: label-container-1
+      image: nginx:1.29
+      ports: 
+        - containerPort: 80
+          protocol: TCP
+---
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: testing-pod-2
+  labels:
+    env: qa
+    ver: "1.33"
+spec: 
+  containers: 
+    - name: label-container-2
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+          protocol: TCP
+
