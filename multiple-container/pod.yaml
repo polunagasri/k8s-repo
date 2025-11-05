@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-pod
+spec:
+  containers:
+    - name: first-container
+      image: nginx:1.29
+      ports:
+        - containerPort: 80
+          protocol: TCP
+
+    - name: second-container
+      image: alpine
+      command: ["sleep", "3600"]
+ 
