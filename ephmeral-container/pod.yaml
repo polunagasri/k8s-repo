@@ -9,4 +9,10 @@ spec:
       ports:
         - containerPort: 80
 
-        
+  ephemeralContainers:
+    - name: mydebug-container
+      image: busybox
+      tty: true
+      stdin: true
+      targetContainerName: my-main-container
+  
