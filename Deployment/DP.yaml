@@ -25,11 +25,19 @@ spec:
           image: polu8688/java-repo:latest
           ports:
             - containerPort: 8080
+
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 25
+            periodSeconds: 5
+
           livenessProbe:
             tcpSocket:
               port: 8080      
             initialDelaySeconds: 40
             periodSeconds: 10
+
           resources:
             requests:
               cpu: 250m
@@ -37,6 +45,7 @@ spec:
             limits:
               cpu: 500m
               memory: 1Gi     
+
       restartPolicy: Always
 
 
