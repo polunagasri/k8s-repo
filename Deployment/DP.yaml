@@ -6,11 +6,10 @@ metadata:
   labels:
     app: javaapp
 spec:
-  minReadySeconds: 5
   replicas: 4
   selector:
     matchLabels:
-      app: javaapp        # must match template labels
+      app: javaapp
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -25,18 +24,21 @@ spec:
         - name: myjava-container
           image: polu8688/java-repo:latest
           ports:
-            - containerPort: 8080     # update if your app uses different port
+            - containerPort: 8080
           livenessProbe:
             tcpSocket:
-              port: 80
+              port: 8080      
+            initialDelaySeconds: 20
+            periodSeconds: 10
           resources:
             requests:
-              cpu: 125m
-              memory: 64Mi
-            limits:
               cpu: 250m
-              memory: 128Mi
+              memory: 512Mi  
+            limits:
+              cpu: 500m
+              memory: 1Gi     
       restartPolicy: Always
+
 
 
                                       
